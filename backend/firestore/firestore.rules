@@ -1,0 +1,24 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 🔹 USERS: Users can only read & update their own profile
+    match /users/{userId} {
+      allow read, update: if request.auth.uid == userId;
+    }
+
+    // 🔹 MARKETS: Anyone can read, but only the creator can update (close)
+    match /markets/{marketId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth != null;
+      allow update: if request.auth.uid == resource.data.createdBy;
+    }
+
+    // 🔹 BETS: Only authenticated users can place bets
+    match /markets/{marketId}/bets/{betId} {
+      allow read: if request.auth != null;
+      allow create: if request.auth.uid == request.resource.data.userId;
+    }
+  }
+}

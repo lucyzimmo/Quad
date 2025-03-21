@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "RobotoSlab";
+  src: url("/fonts/RobotoSlab-Regular.ttf") format("truetype");
+}
+
+@layer base {
+  html {
+    @apply font-sans antialiased;
+  }
+
+  body {
+    @apply min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 m-0 p-0;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+
+  button {
+    @apply rounded-lg border border-transparent px-4 py-2 cursor-pointer transition-colors;
+  }
+
+  a {
+    @apply font-medium text-blue-500 no-underline hover:text-blue-600;
+  }
+}
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}

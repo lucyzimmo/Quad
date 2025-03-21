@@ -1,0 +1,23 @@
+/* Import Google Fonts in your HTML or CSS file */
+@font-face {
+  font-family: "RobotoSlab";
+  src: url("Roboto_Slab/static/RobotoSlab-Regular.ttf") format("truetype");
+}
+
+/* Set a global font for the entire website */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure headings and paragraphs use the same font */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  font-family: "RobotoSlab", sans-serif;
+}

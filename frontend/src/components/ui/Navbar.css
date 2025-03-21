@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  align-items: center;
+  background-color: #1f2937; /* Gray-800 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  color: #60a5fa; /* Blue-500 */
+}
+
+nav a {
+  color: #e5e7eb; /* White */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #3b82f6; /* Blue-400 */
+}
